@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dema · Kolizní laboratoř</title>
+<meta name="description" content="Rozcestník na dema fyzikálních enginů pro three.js">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,750&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div class="wrap">
+<div class="topbar"><a class="brand" href="../">Kolizní laboratoř</a><nav class="nav" aria-label="Hlavní navigace"><a href=".././">Úvod</a><a href="../hriste/">Hřiště</a><a href="../srovnani/">Srovnání</a><a href="../dema/" aria-current="page">Dema</a></nav></div>
+<section aria-labelledby="h-dir">
+  <div class="sec-head">
+    <span class="eyebrow">Rozcestník</span>
+    <h2 id="h-dir">Dema k prozkoumání</h2>
+    <p>Všechna oficiální dema three.js mají vpravo dole tlačítko pro zobrazení zdrojového kódu, takže se z nich dá rovnou učit.</p>
+  </div>
+  <div class="dir">
+    <article class="card">
+      <div class="card-top"><h3>Rapier</h3><span class="tag">three.js addon RapierPhysics</span></div>
+      <p>Nejlepší start pro novou hru. Oficiální příklady ukazují i ovládání postavy a auta.</p>
+      <ul>
+        <li><a href="https://threejs.org/examples/physics_rapier_basic.html">physics_rapier_basic</a> <span>základ</span></li>
+        <li><a href="https://threejs.org/examples/physics_rapier_instancing.html">physics_rapier_instancing</a> <span>tisíce těles</span></li>
+        <li><a href="https://threejs.org/examples/physics_rapier_joints.html">physics_rapier_joints</a> <span>klouby</span></li>
+        <li><a href="https://threejs.org/examples/physics_rapier_character_controller.html">physics_rapier_character_controller</a> <span>postava</span></li>
+        <li><a href="https://threejs.org/examples/physics_rapier_vehicle_controller.html">physics_rapier_vehicle_controller</a> <span>auto</span></li>
+        <li><a href="https://threejs.org/examples/physics_rapier_terrain.html">physics_rapier_terrain</a> <span>heightfield</span></li>
+        <li><a href="https://rapier.rs/demos3d/index.html">rapier.rs/demos3d</a> <span>dema přímo od autorů</span></li>
+      </ul>
+    </article>
+    <article class="card">
+      <div class="card-top"><h3>Jolt Physics</h3><span class="tag">jolt-physics (npm)</span></div>
+      <p>Vlastní galerie JoltPhysics.js je nejbohatší sbírka ze všech, vše postavené na three.js.</p>
+      <ul>
+        <li><a href="https://threejs.org/examples/physics_jolt_instancing.html">physics_jolt_instancing</a> <span>oficiální three.js</span></li>
+        <li><a href="https://jrouwe.github.io/JoltPhysics.js/character_virtual.html">character_virtual</a> <span>postava</span></li>
+        <li><a href="https://jrouwe.github.io/JoltPhysics.js/vehicle_wheeled.html">vehicle_wheeled</a> · <a href="https://jrouwe.github.io/JoltPhysics.js/vehicle_motorcycle.html">motorcycle</a> · <a href="https://jrouwe.github.io/JoltPhysics.js/vehicle_tank.html">tank</a></li>
+        <li><a href="https://jrouwe.github.io/JoltPhysics.js/rig/powered_rig.html">powered_rig</a> <span>ragdoll</span></li>
+        <li><a href="https://jrouwe.github.io/JoltPhysics.js/soft/soft_body.html">soft_body</a> <span>měkká tělesa</span></li>
+        <li><a href="https://jrouwe.github.io/JoltPhysics.js/buoyancy.html">buoyancy</a> <span>vztlak</span></li>
+        <li><a href="https://jrouwe.github.io/JoltPhysics.js/stress_test_threaded.html">stress_test_threaded</a> <span>vícevláknový test</span></li>
+        <li><a href="https://jrouwe.github.io/JoltPhysics.js/">všech 37 dem</a></li>
+      </ul>
+    </article>
+    <article class="card">
+      <div class="card-top"><h3>Ammo.js</h3><span class="tag">Bullet port</span></div>
+      <p>Starší, ale pořád nejlepší galerie látek, lan a deformovatelných těles v three.js.</p>
+      <ul>
+        <li><a href="https://threejs.org/examples/physics_ammo_instancing.html">physics_ammo_instancing</a></li>
+        <li><a href="https://threejs.org/examples/physics_ammo_break.html">physics_ammo_break</a> <span>rozbíjení objektů</span></li>
+        <li><a href="https://threejs.org/examples/physics_ammo_cloth.html">physics_ammo_cloth</a> <span>látka</span></li>
+        <li><a href="https://threejs.org/examples/physics_ammo_rope.html">physics_ammo_rope</a> <span>lano</span></li>
+        <li><a href="https://threejs.org/examples/physics_ammo_terrain.html">physics_ammo_terrain</a> <span>terén</span></li>
+        <li><a href="https://threejs.org/examples/physics_ammo_volume.html">physics_ammo_volume</a> <span>měkká tělesa</span></li>
+        <li><a href="https://enable3d.io/">enable3d</a> <span>herní framework nad Ammo</span></li>
+      </ul>
+    </article>
+    <article class="card">
+      <div class="card-top"><h3>cannon-es</h3><span class="tag">čistý JS</span></div>
+      <p>Galerie obsahuje FPS demo, voxelový svět, vozidla s raycastem i ragdoll.</p>
+      <ul>
+        <li><a href="https://pmndrs.github.io/cannon-es/">pmndrs.github.io/cannon-es</a> <span>galerie příkladů</span></li>
+        <li><a href="https://github.com/pmndrs/cannon-es">github.com/pmndrs/cannon-es</a> <span>zdrojáky příkladů v /examples</span></li>
+        <li><a href="https://github.com/pmndrs/use-cannon">use-cannon</a> <span>varianta pro React Three Fiber</span></li>
+      </ul>
+    </article>
+    <article class="card">
+      <div class="card-top"><h3>Octree + Capsule</h3><span class="tag">bez enginu</span></div>
+      <p>Kolize kapsle hráče a koulí se statickým levelem. Stejnou techniku používá režim „Octree“ na <a href="../hriste/">hřišti</a>.</p>
+      <ul>
+        <li><a href="https://threejs.org/examples/games_fps.html">games_fps</a> <span>FPS pohyb + házení koulí</span></li>
+        <li><a href="https://threejs.org/examples/misc_controls_pointerlock.html">misc_controls_pointerlock</a> <span>nejjednodušší kolize přes raycast</span></li>
+        <li><a href="https://threejs.org/examples/webgl_geometry_terrain_raycast.html">webgl_geometry_terrain_raycast</a> <span>raycast na terén</span></li>
+      </ul>
+    </article>
+    <article class="card">
+      <div class="card-top"><h3>three-mesh-bvh</h3><span class="tag">BVH akcelerace</span></div>
+      <p>Knihovna od gkjohnsona. Kapsle proti libovolně složitému meshi, raycast v řádu mikrosekund.</p>
+      <ul>
+        <li><a href="https://gkjohnson.github.io/three-mesh-bvh/example/bundle/characterMovement.html">characterMovement</a> <span>pohyb postavy</span></li>
+        <li><a href="https://gkjohnson.github.io/three-mesh-bvh/example/bundle/physics.html">physics</a> <span>koule proti meshi</span></li>
+        <li><a href="https://gkjohnson.github.io/three-mesh-bvh/example/bundle/shapecast.html">shapecast</a> <span>průnik tvarů</span></li>
+        <li><a href="https://gkjohnson.github.io/three-mesh-bvh/example/bundle/raycast.html">raycast</a> <span>benchmark raycastu</span></li>
+        <li><a href="https://threejs.org/examples/webgl_raycaster_bvh.html">webgl_raycaster_bvh</a> <span>v oficiálních příkladech</span></li>
+        <li><a href="https://github.com/pmndrs/BVHEcctrl">BVHEcctrl</a> <span>controller pro R3F</span></li>
+      </ul>
+    </article>
+    <article class="card">
+      <div class="card-top"><h3>phy</h3><span class="tag">více backendů</span></div>
+      <p>Jedno API nad několika enginy (mimo jiné Ammo, PhysX, Havok, Oimo). Skvělé pro přímé srovnání na stejné scéně.</p>
+      <ul>
+        <li><a href="https://lo-th.github.io/phy/">lo-th.github.io/phy</a> <span>desítky dem s přepínačem enginu</span></li>
+      </ul>
+    </article>
+    <article class="card">
+      <div class="card-top"><h3>Dokumentace a přehledy</h3><span class="tag">čtení</span></div>
+      <p>Oficiální stránka three.js o fyzice shrnuje, které knihovny jsou udržované.</p>
+      <ul>
+        <li><a href="https://threejs.org/manual/en/physics.html">threejs.org/manual · Physics</a></li>
+        <li><a href="https://rapier.rs/docs/user_guides/javascript/getting_started_js">Rapier JS · začínáme</a></li>
+        <li><a href="https://github.com/jrouwe/JoltPhysics.js">JoltPhysics.js na GitHubu</a></li>
+        <li><a href="https://github.com/pmndrs/react-three-rapier">react-three-rapier</a> · <a href="https://github.com/pmndrs/ecctrl">ecctrl</a> <span>pro React</span></li>
+      </ul>
+    </article>
+  </div>
+</section>
+<footer>Hřiště používá three.js 0.170, Rapier 0.14 a cannon-es 0.20. Knihovny jsou přibalené ve složce <code>assets/vendor</code>, web tedy běží i bez CDN.</footer>
+</div>
+</body>
+</html>

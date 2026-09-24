@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Srovnání enginů · Kolizní laboratoř</title>
+<meta name="description" content="Srovnání fyzikálních enginů pro three.js">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,750&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div class="wrap">
+<div class="topbar"><a class="brand" href="../">Kolizní laboratoř</a><nav class="nav" aria-label="Hlavní navigace"><a href=".././">Úvod</a><a href="../hriste/">Hřiště</a><a href="../srovnani/" aria-current="page">Srovnání</a><a href="../dema/">Dema</a></nav></div>
+<section aria-labelledby="h-cmp">
+  <div class="sec-head">
+    <span class="eyebrow">Srovnání</span>
+    <h2 id="h-cmp">Enginy a kolizní knihovny</h2>
+    <p>Plnohodnotný fyzikální engine řeší dynamiku, klouby i kontakty. Pro spoustu her ale stačí jen detekce kolizí hráče se světem, a to umí lehčí nástroje přímo nad geometrií three.js.</p>
+  </div>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th>Knihovna</th><th>Technologie</th><th>Stav</th><th>Silné stránky</th><th>Slabiny</th><th>Hodí se na</th></tr></thead>
+    <tbody>
+      <tr><td>Rapier</td><td>Rust → WASM</td><td><span class="tag ok">aktivní</span></td><td>Rychlý, deterministický, hotový character a vehicle controller, CCD</td><td>WASM init, API přes handle objekty</td><td>Většina nových 3D her, R3F přes react-three-rapier</td></tr>
+      <tr><td>Jolt</td><td>C++ → WASM</td><td><span class="tag ok">aktivní</span></td><td>AAA engine (Horizon Forbidden West), vícevláknový, soft body, vozidla, ragdolly</td><td>Nízkoúrovňové API, ruční uvolňování paměti</td><td>Náročné simulace, hodně těles, vozidla</td></tr>
+      <tr><td>Ammo.js</td><td>Bullet → asm.js/WASM</td><td><span class="tag old">neudržovaný</span></td><td>Látky, lana, měkká tělesa, spousta tutoriálů</td><td>Velký, těžkopádné API, únik paměti bez <code>Ammo.destroy</code></td><td>Učení z existujících dem, soft body efekty</td></tr>
+      <tr><td>cannon-es</td><td>čistý JavaScript</td><td><span class="tag old">neudržovaný</span></td><td>Malý, čitelný kód, snadný start, žádný WASM</td><td>Pomalejší, méně stabilní stohy, bez CCD</td><td>Prototypy, jednoduché hry, výuka</td></tr>
+      <tr><td>Octree + Capsule</td><td>three.js addon</td><td><span class="tag ok">součást three</span></td><td>Žádná závislost, koule/kapsle proti statickému triangle meshi</td><td>Není to engine: žádná rotace těles, dynamiku píšeš sám</td><td>FPS pohyb hráče po levelu z GLTF</td></tr>
+      <tr><td>three-mesh-bvh</td><td>JS, BVH nad geometrií</td><td><span class="tag ok">aktivní</span></td><td>Extrémně rychlý raycast a shapecast, kapsle proti složitému meshi</td><td>Opět jen detekce, dynamiku píšeš sám</td><td>Character controller, výběr objektů, raycast ve velkých scénách</td></tr>
+      <tr><td>PhysX / Havok</td><td>C++ → WASM</td><td><span class="tag ok">aktivní</span></td><td>Průmyslový standard, velmi stabilní</td><td>Méně three.js příkladů, těžší integrace</td><td>Když potřebuješ konkrétní engine z desktopu</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+<section aria-labelledby="h-guide">
+  <div class="sec-head">
+    <span class="eyebrow">Jak vybrat</span>
+    <h2 id="h-guide">Podle typu hry</h2>
+  </div>
+  <div class="guide">
+    <div><h3>FPS / chodička po levelu</h3><p>Octree + Capsule nebo three-mesh-bvh. Level z Blenderu načteš jako GLTF a kolize máš za pár řádků. Engine přidej až když potřebuješ strkat do beden.</p></div>
+    <div><h3>Fyzikální hříčka, stavění, destrukce</h3><p>Rapier. Stabilní stohy, CCD pro rychlé střely a hotové joints. Jolt, pokud jdeš na stovky až tisíce těles.</p></div>
+    <div><h3>Závody a vozidla</h3><p>Rapier má DynamicRayCastVehicleController, Jolt má kolová vozidla, motorky i tanky. Obojí najdeš v <a href="../dema/">rozcestníku dem</a>.</p></div>
+    <div><h3>Látky, lana, sliz</h3><p>Jolt soft body nebo Ammo.js. Rapier měkká tělesa nemá.</p></div>
+  </div>
+</section>
+<footer>Hřiště používá three.js 0.170, Rapier 0.14 a cannon-es 0.20. Knihovny jsou přibalené ve složce <code>assets/vendor</code>, web tedy běží i bez CDN.</footer>
+</div>
+</body>
+</html>

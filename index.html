@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kolizní laboratoř three.js</title>
+<meta name="description" content="Porovnání kolizních systémů a fyzikálních enginů pro three.js">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,750&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="wrap">
+<div class="topbar"><a class="brand" href="./">Kolizní laboratoř</a><nav class="nav" aria-label="Hlavní navigace"><a href="./" aria-current="page">Úvod</a><a href="hriste/">Hřiště</a><a href="srovnani/">Srovnání</a><a href="dema/">Dema</a></nav></div>
+<header>
+  <span class="eyebrow">three.js · fyzika a kolize pro hry</span>
+  <h1>Kolizní laboratoř</h1>
+  <p class="lede">Jedna scéna, čtyři způsoby, jak řešit kolize. Na hřišti přepínáš systémy a sleduješ chování i čas výpočtu. Srovnání ti pomůže vybrat engine pro konkrétní hru a rozcestník vede na oficiální i komunitní dema.</p>
+</header>
+<section class="tiles" aria-label="Části webu">
+  <a class="tile" href="hriste/"><span class="eyebrow">Interaktivní</span><h3>Hřiště</h3><p>Rapier, cannon-es, Octree a vlastní OBB kolize na stejné scéně. Zátěžový test se 400 koulemi a graf času kroku.</p><span class="go">Otevřít hřiště →</span></a>
+  <a class="tile" href="srovnani/"><span class="eyebrow">Přehled</span><h3>Srovnání enginů</h3><p>Rapier, Jolt, Ammo.js, cannon-es, Octree, three-mesh-bvh, PhysX a Havok. Co umí, co ne a pro jaký typ hry se hodí.</p><span class="go">Zobrazit srovnání →</span></a>
+  <a class="tile" href="dema/"><span class="eyebrow">Odkazy</span><h3>Dema k prozkoumání</h3><p>Zhruba 50 živých dem roztříděných podle knihovny, od oficiálních příkladů three.js po galerii JoltPhysics.js.</p><span class="go">Procházet dema →</span></a>
+</section>
+<footer>Hřiště používá three.js 0.170, Rapier 0.14 a cannon-es 0.20. Knihovny jsou přibalené ve složce <code>assets/vendor</code>, web tedy běží i bez CDN.</footer>
+</div>
+</body>
+</html>

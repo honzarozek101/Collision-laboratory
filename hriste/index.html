@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hřiště · Kolizní laboratoř</title>
+<meta name="description" content="Interaktivní porovnání kolizních systémů">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,750&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div class="wrap">
+<div class="topbar"><a class="brand" href="../">Kolizní laboratoř</a><nav class="nav" aria-label="Hlavní navigace"><a href=".././">Úvod</a><a href="../hriste/" aria-current="page">Hřiště</a><a href="../srovnani/">Srovnání</a><a href="../dema/">Dema</a></nav></div>
+<section aria-labelledby="h-lab">
+  <div class="sec-head">
+    <span class="eyebrow">Hřiště</span>
+    <h2 id="h-lab">Vyzkoušej si to naživo</h2>
+  </div>
+  <div class="lab">
+    <div class="viewport" id="viewport">
+      <canvas id="c" aria-label="3D scéna s fyzikální simulací"></canvas>
+      <div class="hud">
+        <div class="hud-row">
+          <span class="pill">FPS <b id="fps">–</b></span>
+          <span class="pill">krok <b id="stepms">–</b> ms</span>
+          <span class="pill">těles <b id="count">0</b></span>
+        </div>
+        <div class="spark"><canvas id="spark" width="360" height="88" aria-label="Graf času fyzikálního kroku"></canvas></div>
+      </div>
+      <div class="hint">tah: otáčení · kolečko: zoom · F: výstřel</div>
+      <div class="status" id="status" hidden></div>
+    </div>
+
+    <div class="panel">
+      <div class="group">
+        <span class="eyebrow">Kolizní systém</span>
+        <div class="engines" id="engines"></div>
+      </div>
+      <div class="group">
+        <span class="eyebrow">Přidat tělesa</span>
+        <div class="btns">
+          <button class="btn" id="b-spheres">+50 koulí</button>
+          <button class="btn" id="b-boxes">+50 kvádrů</button>
+          <button class="btn" id="b-shoot">Výstřel<kbd>F</kbd></button>
+        </div>
+        <div class="btns">
+          <button class="btn primary" id="b-bench">Zátěžový test: 400 koulí</button>
+          <button class="btn" id="b-clear">Vyčistit</button>
+        </div>
+      </div>
+      <div class="info" id="info"></div>
+    </div>
+  </div>
+</section>
+<footer>Hřiště používá three.js 0.170, Rapier 0.14 a cannon-es 0.20. Knihovny jsou přibalené ve složce <code>assets/vendor</code>, web tedy běží i bez CDN.</footer>
+</div>
+<script type="importmap">
+{"imports":{
+  "three":"../assets/vendor/three/three.module.js",
+  "three/addons/":"../assets/vendor/three/addons/"
+}}
+</script>
+<script type="module" src="../assets/js/hriste.js"></script>
+</body>
+</html>
